@@ -35,7 +35,7 @@ metadata:
     env: dev
   
 spec:
-  type: LoadBalencer
+  type: LoadBalancer
   selector:
       app: frontend
       env: dev
