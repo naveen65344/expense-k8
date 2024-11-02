@@ -41,6 +41,6 @@ spec:
   selector:
     app: my-app1          # This should match the labels of the Pods you want to expose
   ports:
-    - port: 80           # Port that the service will expose
+    - port: 8080           # Port that the service will expose
       targetPort: 8080     # Port on the Pod that the service forwards to
       protocol: TCP       # Specify the protocol (optional, defaults to TCP)
