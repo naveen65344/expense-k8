@@ -50,7 +50,7 @@ spec:
       app: backend
       env: dev
   ports:
-    - port: 80
+    - port: 8080
       targetPort: 8080
       protocol: TCP  # Protocol type (default is TCP)
 
