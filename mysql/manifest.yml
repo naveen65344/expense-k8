@@ -2,41 +2,35 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
-  namespace: expense
+  namespace: expense  
   labels:
-    app: mysql
-    tier: db
-    project: expense
+    app: my-app        # Optional: Add labels for organization
 spec:
-  replicas: 2
+  replicas: 2         # Number of replicas to run
   selector:
     matchLabels:
-      app: mysql
-      tier: db
-      project: expense
+      app: my-app      # Selector to identify Pods managed by this deployment
   template:
     metadata:
       labels:
-        app: mysql
-        tier: db
-        project: expense
+        app: my-app    # Labels for the Pods
     spec:
       containers:
-      - name: mysql
-        image: joindevops/mysql:v1
+      - name: mysql     # Container name
+        image: joindevops/mysql:v1    # Container image
+        ports:
+        - containerPort: 80  # Port the container listens on
 ---
+ apiVersion: v1
 kind: Service
-apiVersion: v1
 metadata:
-  name: mysql
-  namespace: expense
+  name: my-service       # Replace with your desired service name
+  namespace: expense      # Specify the namespace
 spec:
+  type: ClusterIP        # Specify the service type
   selector:
-    app: mysql
-    tier: db
-    project: expense
+    app: my-app          # This should match the labels of the Pods you want to expose
   ports:
-  - name: mysql-port
-    protocol: TCP
-    port: 3306 # service port
-    targetPort: 3306 # container port
+    - port: 80           # Port that the service will expose
+      targetPort: 80     # Port on the Pod that the service forwards to
+       
