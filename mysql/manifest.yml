@@ -24,7 +24,9 @@ spec:
  apiVersion: v1
  kind: Service
  metadata:
-  name: my-service       # Replace with your desired service name
+  name: my-service
+  selector:
+      app: my-app        
   namespace: expense      # Specify the namespace
 spec:
   type: ClusterIP        # Specify the service type
