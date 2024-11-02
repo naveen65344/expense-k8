@@ -22,8 +22,8 @@ spec:
       containers:
       - name: mysql
         image: joindevops/mysql:v1  # Specify the Docker image
-        ports:
-        - containerPort: 80  # Port to expose
+        
+        
 ---
 apiVersion: v1
 kind: Service
@@ -36,5 +36,5 @@ spec:
      app: database
      env: dev
   ports:
-    - port: 3306  # Port exposed by the service
-      targetPort: 3306  # Port on the pod to forward traffic to
+    - port: 8080  # Port exposed by the service
+      targetPort: 8080  # Port on the pod to forward traffic to
