@@ -1,41 +1,41 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql
+  name: frontend
   namespace: expense  # Optional: specify your namespace here
   labels:
-    app: database
+    app: frontend
     env: dev
 spec:
   replicas: 2  # Number of desired pods
   selector:
     matchLabels:
-      app: database
+      app: frontend
       env: dev
       
   template:
     metadata:
       labels:
-        app: database
+        app: frontend
         env: dev
     spec:
       containers:
-      - name: mysql
-        image: joindevops/mysql:v1  # Specify the Docker image
+      - name: frontend
+        image: joindevops/frontend:v1  # Specify the Docker image
         
         
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql
+  name: frontend
   namespace: expense # Optional: specify your namespace here
 spec:
   type: ClusterIP  # Change to NodePort or LoadBalancer if needed
   selector:
-     app: database
+     app: frontend
      env: dev
   ports:
-    - port: 3306  # Port exposed by the service
-      targetPort: 3306 # Port on the pod to forward traffic to
+    - port: 80  # Port exposed by the service
+      targetPort: 80 # Port on the pod to forward traffic to
       protocol: TCP
