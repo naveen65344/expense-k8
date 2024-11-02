@@ -31,7 +31,7 @@ metadata:
   name: frontend
   namespace: expense # Optional: specify your namespace here
 spec:
-  type: ClusterIP  # Change to NodePort or LoadBalancer if needed
+  type: LoadBalancer  # Change to NodePort or LoadBalancer if needed
   selector:
      app: frontend
      env: dev
