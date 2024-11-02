@@ -1,46 +1,7 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: mysql
-  namespace: expense
-  labels:
-    app: database
-    env: dev
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: database
-      env: dev
-  template:
-    metadata:
-
-      labels:
-        app: database
-        env: dev
-    spec:
-      containers:
-      - name: mysql
-        image: joindevops/mysql:v1
-        
----
 apiVersion: v1
-kind: Service
+kind: Namespace
 metadata:
-  name: mysql
-  namespace: expense
-  
+  name: expense
   labels:
-    app: database
-    env: dev
-  
-spec:
-  type: ClusterIP
-  selector:
-      app: database
-      env: dev
-  ports:
-    - port: 80
-      targetPort: 8080
-      protocol: TCP  # Protocol type (default is TCP)
-
+    project: expense
+    environment: dev
