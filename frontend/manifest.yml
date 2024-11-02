@@ -35,7 +35,7 @@ metadata:
     env: dev
   
 spec:
-  type: ClusterIP
+  type: LoadBalencer
   selector:
       app: frontend
       env: dev

@@ -40,7 +40,7 @@ spec:
       app: database
       env: dev
   ports:
-    - port: 80
-      targetPort: 8080
+    - port: 3306
+      targetPort: 3306
       protocol: TCP  # Protocol type (default is TCP)
 
