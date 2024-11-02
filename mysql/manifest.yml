@@ -20,7 +20,7 @@ spec:
         env: dev
     spec:
       containers:
-      - name: nginx
+      - name: mysql
         image: joindevops/mysql:v1  # Specify the Docker image
         ports:
         - containerPort: 80  # Port to expose
