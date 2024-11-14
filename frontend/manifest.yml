@@ -11,7 +11,7 @@ spec:
   selector:
     matchLabels:
       app: frontend
-      env: dev
+      env: de
       
   template:
     metadata:
