@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: hemanthkumar75/frontend:v1  # Specify the Docker image
+        image: naveen6792/frontend:v1  # Specify the Docker image
         
         
 ---

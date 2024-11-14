@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: hemanthkumar75/mysql:v1  # Specify the Docker image
+        image: naveen6792/mysql:v1  # Specify the Docker image
         
         
 ---
