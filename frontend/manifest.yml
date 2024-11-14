@@ -11,7 +11,7 @@ spec:
   selector:
     matchLabels:
       app: frontend
-      env: de
+      env: dev
       
   template:
     metadata:
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: joindevops/frontend:v1  # Specify the Docker image
+        image: hemanthkumar75/frontend:v1  # Specify the Docker image
         
         
 ---
